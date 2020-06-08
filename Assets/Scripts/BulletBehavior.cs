@@ -6,6 +6,7 @@ public class BulletBehavior : MonoBehaviour
 {
 
     public Transform target;
+    public int damage = 1;
 
     [Header("Attributes")]
     public float speed;
@@ -17,6 +18,8 @@ public class BulletBehavior : MonoBehaviour
 
     void EnemyHit()
     {
+        target.gameObject.GetComponent<EnemyManager>().hp -= damage;
+        Debug.Log(target.gameObject.GetComponent<EnemyManager>().hp);
         Debug.Log("tuchey");
         Destroy(gameObject);
     }

@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Resources;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 
 public class TurretBehaviour : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class TurretBehaviour : MonoBehaviour
 
     [Header("Turret attributes")]
     public float damage;
-    public float range = 2f;
+    public float range;
     public float fireRate = 1f;
     public float fireCountdown = 0f;
 
@@ -21,32 +21,34 @@ public class TurretBehaviour : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnLocation;
 
+    
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, .25f);
+        InvokeRepeating("UpdateTarget", 0f, .2f);
     }
 
     void UpdateTarget()
     {
         GameObject[] EnemyList = GameObject.FindGameObjectsWithTag(enemyTag);
-
         float shortestDistance = range + 2f;
         GameObject targetedEnemy = null;
-
+        
         foreach( GameObject enemy in EnemyList )
         {
-            float distanceToEnemy = Vector2.Distance(gameObject.transform.position, enemy.transform.position);
-
-            if (distanceToEnemy < shortestDistance)
+            float distanceToEnemy = UnityEngine.Vector3.Distance(gameObject.transform.position, enemy.transform.position);
+            
+            if (distanceToEnemy <= shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
                 targetedEnemy = enemy;
             }
-
-            if (targetedEnemy !=  null && distanceToEnemy <= range)
+            if (targetedEnemy != null && shortestDistance <= range)
             {
-                target = enemy.transform;
+                target = targetedEnemy.transform;
             }
             else
             {
@@ -70,6 +72,7 @@ public class TurretBehaviour : MonoBehaviour
     {
         if (target == null)
             return;
+
 
         if(fireCountdown <= 0f)
         {

@@ -64,8 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletBehavior.cs" />
-    <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemyIA.cs" />
+    <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\ShowTilePos.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\TurretBehaviour.cs" />
@@ -90,17 +91,11 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProGrids">
-      <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -131,6 +126,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>C:/Users/tomas/Inge_Log_Labyrinth/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -12,7 +12,7 @@ public class EnemyIA : MonoBehaviour
     public Transform target;
 
     public float speed = 200f;
-    public float nextWaypointDistance = 3f;
+    public float nextWaypointDistance = 0.1f;
 
     Path path;
     int currentWaypoint = 0;
@@ -27,7 +27,7 @@ public class EnemyIA : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 5f);
+        InvokeRepeating("UpdatePath", 0f, 15f);
         
     }
 
@@ -35,7 +35,7 @@ public class EnemyIA : MonoBehaviour
     {
         if(seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
         }
     }
 
@@ -74,9 +74,9 @@ public class EnemyIA : MonoBehaviour
 
         //Vector2 directionToWaypoint = path.vectorPath[currentWaypoint] - transform.position;
         //float distanceDelta = speed * Time.deltaTime;
-        //transform.Translate(directionToWaypoint * distanceDelta, Space.World);
+        //transform.Translate(directionToWaypoint * distanceDelta);
 
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+        float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
 
         if ( distance < nextWaypointDistance)
         {
