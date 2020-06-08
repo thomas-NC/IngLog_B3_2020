@@ -27,7 +27,7 @@ public class EnemyIA : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("UpdatePath", 0f, 5f);
         
     }
 
@@ -67,14 +67,14 @@ public class EnemyIA : MonoBehaviour
             reachedEndOfPath = false;
         }
 
-        //Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        //Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 force = direction * speed * Time.deltaTime;
 
-        //rb.AddForce(force);
+        rb.AddForce(force);
 
-        Vector2 directionToWaypoint = path.vectorPath[currentWaypoint] - transform.position;
-        float distanceDelta = speed * Time.deltaTime;
-        transform.Translate(directionToWaypoint * distanceDelta, Space.World);
+        //Vector2 directionToWaypoint = path.vectorPath[currentWaypoint] - transform.position;
+        //float distanceDelta = speed * Time.deltaTime;
+        //transform.Translate(directionToWaypoint * distanceDelta, Space.World);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
