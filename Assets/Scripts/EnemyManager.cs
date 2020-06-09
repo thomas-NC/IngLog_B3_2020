@@ -23,7 +23,7 @@ public class EnemyManager : MonoBehaviour
         //Debug.Log("currentHp = " + currentHp + " // Ratio = " + currentHp / startingHp);
         if (currentHp <= 0)
         {
-            GameManager.Score += 1;
+            GameManager.instance.Score += 1;
             Destroy(gameObject);
         }
     }

@@ -16,7 +16,7 @@ public class EnemyEnterEndzone : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Enemy"))
         {
-            GameManager.PlayerHp -= 1;
+            GameManager.instance.PlayerHp -= 1;
             Destroy(col.gameObject);
         }
     }

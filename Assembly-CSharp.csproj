@@ -63,12 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BuildManager.cs" />
     <Compile Include="Assets\Scripts\BulletBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemyEnterEndzone.cs" />
     <Compile Include="Assets\Scripts\EnemyIA.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameOverManager.cs" />
+    <Compile Include="Assets\Scripts\SelectObstacle.cs" />
+    <Compile Include="Assets\Scripts\SelectTurret.cs" />
     <Compile Include="Assets\Scripts\ShowTilePos.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\TileBehavior.cs" />
