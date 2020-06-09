@@ -18,9 +18,9 @@ public class BulletBehavior : MonoBehaviour
 
     void EnemyHit()
     {
-        target.gameObject.GetComponent<EnemyManager>().hp -= damage;
-        Debug.Log(target.gameObject.GetComponent<EnemyManager>().hp);
-        Debug.Log("tuchey");
+        target.gameObject.GetComponent<EnemyManager>().currentHp -= damage;
+        //Debug.Log(target.gameObject.GetComponent<EnemyManager>().currentHp);
+        //Debug.Log("tuchey");
         Destroy(gameObject);
     }
     // Update is called once per frame

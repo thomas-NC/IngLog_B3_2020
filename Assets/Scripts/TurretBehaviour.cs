@@ -10,7 +10,6 @@ public class TurretBehaviour : MonoBehaviour
     public Transform target;
 
     [Header("Turret attributes")]
-    public float damage;
     public float range;
     public float fireRate = 1f;
     public float fireCountdown = 0f;

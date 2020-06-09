@@ -68,8 +68,9 @@ GameObject:
   - component: {fileID: 5311442800685677200}
   - component: {fileID: 5699618316750343577}
   - component: {fileID: 5948059760833811483}
+  - component: {fileID: 2084497331655032221}
   m_Layer: 8
-  m_Name: TowerDesfenseTilese2t-export
+  m_Name: BadTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,3 +166,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &2084497331655032221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819643935895358766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a4a9fdf5cc27c49a82acc0c2c32627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 0, b: 0, a: 0.67058825}
